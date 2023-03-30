@@ -217,7 +217,7 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
 
   tags = {
     Name        = "uda-table-1"
-    Environment = "production"
+    Environment = "udacity"
   }
 }
 ####
@@ -228,7 +228,7 @@ resource "aws_s3_bucket" "uda_b" {
 
   tags = {
     Name        = "uda-bucket"
-    Environment = "production"
+    Environment = "udacity"
   }
 }
 
