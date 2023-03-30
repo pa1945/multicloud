@@ -50,7 +50,7 @@ resource "azurerm_mssql_server" "udacity" {
   version                      = "12.0"
   administrator_login          = "justadminuda"
   administrator_login_password = "minE#mikA#1945@"
-
+}
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database
 
