@@ -1,6 +1,6 @@
 locals {
   name   = "udacity"
-  region = "us-east-2"
+  region = "us-east-1"
   tags = {
     Name      = local.name
     Terraform = "true"
