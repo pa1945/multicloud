@@ -152,4 +152,43 @@ Your goal is to select a cloud provider for each of the 4 required services - SQ
 
 ## License
 
-[License](LICENSE.txt)
+[License](https://github.com/pa1945/multicloud/blob/main/LICENSE.txt)
+- https://github.com/pa1945/multicloud/blob/main/LICENSE.txt
+
+
+### Solution Chosen  ###
+
+
+1. The team decided on Azure SQL and a dotnet web app due to Microsoft being the 
+   creators of both those technologies. 
+   We have the highest compatibility and support from Microsoft with both SQL 
+   and dotnet.
+
+
+2. Justify why your team chose AWS DynamoDB over Azure's counterpart.
+
+
+### Cost for all four services.
+These are the results at the time of writing:
+
+|  Service            | AWS                 |  Azure                 |  Choice   |
+| ---------           | ----------          |     ---                |   ---     |
+| Cloud Storage       | 4.60 USD            |   5.20  USD            | AWS       |   <== AWS S3 X Azure Blob == 200Gb
+| SQL Server          | 136.83 USD          | 166.92  USD            | Azure     |   <== Azure SQL Server
+| Web App: Kubernetes | 73.00 USD           |  70.08  USD            | Azure     |   <== Web App - Azure dotnet: EKS X AKS
+| NoSQL               | 26.39 USD           |  23.36  USD            | AWS       |   <== AWS DynamoDB / Azure Cosmos DB
+| ---------           | ----------          | ----                   |     ---   |
+
+
+---
+
+## AWS DynamoDB vs Azure Cosmos DB
+
+We can see in this case that Azure (23.36 USD) is actually slightly 
+cheaper than AWS (26.39 USD).
+The costs are very similar to each other, not in the long run much different.
+However, using AWS for our NoSQL database we gain 
+additional availability in that we're not stacking the service a lot in Azure.
+The costs difference can be negligible in this case.
+
+---
