@@ -45,8 +45,8 @@ resource "azurerm_storage_account" "udacity" {
 
 resource "azurerm_mssql_server" "udacity" {
   name                         = "uda-alves-az-mssql"
-  resource_group_name          = data.azurerm_resource_group.example.name
-  location                     = data.azurerm_resource_group.example.location
+  resource_group_name          = data.azurerm_resource_group.udacity.name
+  location                     = data.azurerm_resource_group.udacity.location
   version                      = "12.0"
   administrator_login          = "justadminuda"
   administrator_login_password = "minE#mikA#1945@"
@@ -85,7 +85,7 @@ resource "azurerm_service_plan" "udacity" {
 resource "azurerm_windows_web_app" "udacity" {
   name                = "udaalvesazdotnet"
   resource_group_name = data.azurerm_resource_group.udacity.name
-  location            = data.azurerm_service_plan.udacity.location
+  location            = azurerm_service_plan.udacity.location
   service_plan_id     = azurerm_service_plan.udacity.id
 
   site_config {}
