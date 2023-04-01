@@ -179,11 +179,11 @@ resource "aws_ecs_task_definition" "udacity_app" {
     "environment": [
       {
         "name": "AZURE_SQL_SERVER",
-        "value": "uda-alves-az-mssql"
+        "value": "udacity-tscotto-azure-sql"
       },
       {
         "name": "AZURE_DOTNET_APP",
-        "value": "udaalvesazdotnet"
+        "value": "udacity-tscotto-azure-dotnet-app"
       }
     ],
     "portMappings": [
@@ -203,39 +203,4 @@ variable "app_count" {
 }
 
 ####### Your Additions Will Start Here ######
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table
-#
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
-  name           = "uda-alves-dynamodb"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "UserId"
-
-  attribute {
-    name = "UserId"
-    type = "S"
-  }
-
-  tags = {
-    Name        = "uda-table-1"
-    Environment = "udacity"
-  }
-}
-####
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
-
-resource "aws_s3_bucket" "uda_b" {
-  bucket = "uda-alves-aws-s3"
-
-  tags = {
-    Name        = "uda-bucket"
-    Environment = "udacity"
-  }
-}
-
-resource "aws_s3_bucket_acl" "uda_example" {
-  bucket = aws_s3_bucket.uda_b.id
-  acl    = "private"
-}
-
-###
 
